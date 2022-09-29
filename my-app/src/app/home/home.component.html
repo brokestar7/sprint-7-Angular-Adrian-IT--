@@ -1,0 +1,13 @@
+<h1>Que quieres hacer?</h1>
+
+<p><input type="checkbox" id="check1" value="false" (click)="calcularServicios($event,500)" (click)="mostrarPanel($event)"> Una pagina web (500€)</p>
+<div *ngIf="valor == false else panel"></div>
+<ng-template #panel>
+    <app-panel></app-panel>
+</ng-template>
+<p><input type="checkbox" id="check2" value="false" (click)="calcularServicios($event,300)"> Una consultoria SEO (300€)</p>
+<p><input type="checkbox" id="check3" value="false" (click)="calcularServicios($event , 200)"> Una campanya de Google Ads (200€)</p>
+
+<p> Preu: {{sumarServicio.precioTotal}} </p>
+<br>
+<button routerLink="/welcome">Regresar a bienvenido/a</button>
