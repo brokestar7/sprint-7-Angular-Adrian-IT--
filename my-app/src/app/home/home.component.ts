@@ -16,16 +16,16 @@ export class HomeComponent implements OnInit {
   calcularServicios(event:Event,value:number) {
 
     if((<HTMLInputElement>event.target).value == "false"){
-      this.precioFinal +=value;
+      this.sumarServicio.subPrecio +=value;
       (<HTMLInputElement>event.target).value = "true";
       console.log(this.precioFinal);
-      this.sumarServicio.actualizarSubTotal(value)
+      this.sumarServicio.actualizarTotal();
     }
     else {
-      this.precioFinal -=value;
+      this.sumarServicio.subPrecio -=value;
       (<HTMLInputElement>event.target).value = "false";
       console.log(this.precioFinal);
-      this.sumarServicio.actualizarSubTotal(value)
+      this.sumarServicio.actualizarTotal();
     }
   }
 
